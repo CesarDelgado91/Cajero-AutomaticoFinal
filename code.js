@@ -16,7 +16,7 @@ formLogin.addEventListener('submit', (e) => {
      if(filtro.length) {
         localStorage.setItem("login", JSON.stringify(filtro));
         window.open("banco.html","_self");
-// si no cuinciden los datos ingresados en el formlogin manda mensaje de error 
+// si no cuinciden los datos ingresados en el formlogin manda mensaje de datos incorrectos
      }else {
         formLogin.reset();
         validador.textContent = "datos incorrectos";

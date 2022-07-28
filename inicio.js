@@ -34,7 +34,7 @@ function validarRegla(a){
 }
 
 
-//creamos variable  para guardar en localstorage y se pone como variable let por la modificacion en el arreglo
+//guardamos en localstorage y se pone como variable let por la modificacion en el arreglo
 let userLogin = JSON.parse(localStorage.getItem("login"));
 
 // si se realizo un movimiento en saldo se guarda en localstorage y al abrir de nuevo la cuenta se queda guardado el ultimo dato
@@ -43,7 +43,7 @@ if(localStorage.getItem(userLogin[0].usuario)){
 }
 
 // en bienvenida agrega el nombre completo de el usuario 
-bienvenido.textContent = `BIENVENIDO ${userLogin[0].nombre}` 
+bienvenido.textContent = `BIENVENIDO(A) ${userLogin[0].nombre}` 
 
 // evento de consultar
 formConsultar.addEventListener("submit", (e) => {
@@ -64,11 +64,11 @@ formDeposito.addEventListener("submit", (e) => {
         const resultado = saldo+deposito;
         if(validarRegla(resultado)){
             userLogin[0].saldo = saldo+deposito;
-            pRespuestaD.textContent = `se deposito nuevo saldo $${userLogin[0].saldo}`;
+            pRespuestaD.textContent = `Se deposito nuevo saldo $${userLogin[0].saldo}`;
 
              localStorage.setItem(userLogin[0].usuario,JSON.stringify(userLogin));
         }else{
-            pRespuestaD.textContent="no cumple con las reglas de Negocio";
+            pRespuestaD.textContent="No cumple con las reglas de Negocio ingrese otra cantidad que no supere los 990";
              }
     }else{
         pRespuestaD.textContent="Dato invalido";
@@ -89,11 +89,11 @@ formRetiro.addEventListener("submit", (e) =>{
         const resultado =saldo-retiro;
          if(validarRegla(resultado)){
             userLogin[0].saldo = saldo-retiro;
-            pRespuestaR.textContent = `se retiro y su nuevo saldo $${userLogin[0].saldo}`;
+            pRespuestaR.textContent = `Se retiro y su nuevo saldo $${userLogin[0].saldo}`;
         
             localStorage.setItem(userLogin[0].usuario,JSON.stringify(userLogin)); 
          }else{
-            pRespuestaR.textContent="no cumple con las reglas de Negocio";
+            pRespuestaR.textContent="No cumple con las reglas de Negocio su cuenta no puede quedar en menos de $10";
               }
     }else{
         pRespuestaR.textContent="Dato invalido";
