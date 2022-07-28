@@ -64,7 +64,7 @@ formDeposito.addEventListener("submit", (e) => {
         const resultado = saldo+deposito;
         if(validarRegla(resultado)){
             userLogin[0].saldo = saldo+deposito;
-            pRespuestaD.textContent = `Se deposito nuevo saldo $${userLogin[0].saldo}`;
+            pRespuestaD.textContent = `Se realizo un deposito su nuevo saldo es $${userLogin[0].saldo}`;
 
              localStorage.setItem(userLogin[0].usuario,JSON.stringify(userLogin));
         }else{
