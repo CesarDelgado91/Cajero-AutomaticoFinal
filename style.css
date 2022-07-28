@@ -1,9 +1,38 @@
 body{
     margin: 0;
     padding: 0;
-    background-color:rgb(20, 66, 51);
+    background-color:#003B46;
 }
 
 .card{
     min-height: 300px;
+}
+.divcar {
+    background-color: #C4DFE6;
+}
+.divcar h2{
+    color:#66A5AD ;
+}
+.divcar label{
+    color: black;
+}
+
+.btncolor {
+    background-color: #003B46;
+    color: white;
+}
+.divbanco .card{
+    background-color: #C4DFE6;
+}
+
+.divbanco .label{
+    color: #003B46;
+}
+
+.divbanco button{
+    background-color: #003B46;
+    color: white;
+}
+.divbanco button:hover{
+   background-color: #66A5AD;
 }

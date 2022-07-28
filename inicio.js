@@ -1,3 +1,5 @@
+
+//se declaran variables con 
 const bienvenido = document.getElementById("bienvenido");
 const formConsultar = document.getElementById("formConsultar");
 const rSaldo = document.getElementById("rSaldo");
@@ -32,10 +34,10 @@ function validarRegla(a){
 }
 
 
-//creamos variable  para guardar en localstorage
+//creamos variable  para guardar en localstorage y se pone como variable let por la modificacion en el arreglo
 let userLogin = JSON.parse(localStorage.getItem("login"));
 
-
+// si se realizo un movimiento en saldo se guarda en localstorage y al abrir de nuevo la cuenta se queda guardado el ultimo dato
 if(localStorage.getItem(userLogin[0].usuario)){
   userLogin = JSON.parse(localStorage.getItem(userLogin[0].usuario));
 }
@@ -48,7 +50,7 @@ formConsultar.addEventListener("submit", (e) => {
     e.preventDefault();
     pRespuestaD.textContent="";
     pRespuestaR.textContent="";
-    rSaldo.textContent = `tu saldo es: $${userLogin[0].saldo}`;
+    rSaldo.textContent = `Tu Saldo es: $${userLogin[0].saldo}`;
 });
 
 // Evento de Deposito
@@ -102,7 +104,7 @@ formRetiro.addEventListener("submit", (e) =>{
 
 
 
-
+// evento para cerrar seccion de usuario
 btnCerrar.addEventListener("click",() => {
     localStorage.removeItem("login");
     pRespuestaD.textContent="";
